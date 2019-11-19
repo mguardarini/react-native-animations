@@ -7,80 +7,42 @@ import {
   Animated
 } from 'react-native';
 
-import {styles} from './style'
-import profileImage from "../../assets/me.jpg";
-
 import {
-HEADER_MAX_HEIGHT,
-HEADER_MIN_HEIGHT,
-PROFILE_IMAGE_MAX_HEIGHT,
-PROFILE_IMAGE_MIN_HEIGHT 
-} from './dimensions';
+  GenerateHeaderHeight,
+  GenerateProfileImageHeight,
+  GenerateProfileImageMarginTop,
+  GenerateHeaderZindex,
+  GenerateHeaderTitleBottom} from './ProfileImageTransition';
+
+import {styles} from './Style'
+import profileImage from "../../assets/me.jpg";
 
 class Homepage extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       scrollY: new Animated.Value(0)
     };
   }
+
   render() {
-    const ProfileName = "Mr.Sponge";
-    const headerHeight = this.state.scrollY.interpolate({
-      inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-      outputRange: [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT],
-      extrapolate: 'clamp'
-    });
-    const profileImageHeight = this.state.scrollY.interpolate({
-      inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-      outputRange: [PROFILE_IMAGE_MAX_HEIGHT, PROFILE_IMAGE_MIN_HEIGHT],
-      extrapolate: 'clamp'
-    });
-
-    const profileImageMarginTop = this.state.scrollY.interpolate({
-      inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT],
-      outputRange: [
-        HEADER_MAX_HEIGHT - PROFILE_IMAGE_MAX_HEIGHT / 2,
-        HEADER_MAX_HEIGHT + 5
-      ],
-      extrapolate: 'clamp'
-    });
-    const headerZindex = this.state.scrollY.interpolate({
-      inputRange: [0, HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT, 120],
-      outputRange: [0, 0, 1000],
-      extrapolate: 'clamp'
-    });
-
-    const headerTitleBottom = this.state.scrollY.interpolate({
-      inputRange: [
-        0,
-        HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT,
-        HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT + 5 + PROFILE_IMAGE_MIN_HEIGHT,
-        HEADER_MAX_HEIGHT -
-          HEADER_MIN_HEIGHT +
-          5 +
-          PROFILE_IMAGE_MIN_HEIGHT +
-          26
-      ],
-      outputRange: [-20, -20, -20, 0],
-      extrapolate: 'clamp'
-    });
+    const scrollY = this.state.scrollY;
+    const profileName = "Mr.Sponge";
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.mainView}>
         <Animated.View
           style={[styles.mainContainer,{
-            height: headerHeight,
-            zIndex: headerZindex,
-            elevation: headerZindex, //required for android
+            height: GenerateHeaderHeight(scrollY),
+            zIndex: GenerateHeaderZindex(scrollY),
+            elevation: GenerateHeaderZindex(scrollY), //required for android
           }]}
         >
           <Animated.View
-            style={{ position: 'absolute', bottom: headerTitleBottom }}
+            style={{ position: 'absolute', bottom: GenerateHeaderTitleBottom(scrollY) }}
           >
             <Text style={styles.mainText}>
-              {ProfileName}
+              {profileName}
             </Text>
           </Animated.View>
         </Animated.View>
@@ -89,18 +51,18 @@ class Homepage extends Component {
           style={{ flex: 1 }}
           scrollEventThrottle={16}
           onScroll={Animated.event([
-            { nativeEvent: { contentOffset: { y: this.state.scrollY } } }
+            { nativeEvent: { contentOffset: { y: scrollY } } }
           ])}
         >
           <Animated.View
             style={{
-              height: profileImageHeight,
-              width: profileImageHeight,
-              borderRadius: PROFILE_IMAGE_MAX_HEIGHT / 2,
+              height: GenerateProfileImageHeight(scrollY),
+              width: GenerateProfileImageHeight(scrollY),
+              borderRadius: 40,
               borderColor: 'white',
               borderWidth: 3,
               overflow: 'hidden',
-              marginTop: profileImageMarginTop,
+              marginTop: GenerateProfileImageMarginTop(scrollY),
               marginLeft: 10
             }}
           >
@@ -111,10 +73,9 @@ class Homepage extends Component {
           </Animated.View>
           <View>
             <Text style={styles.profileName}>
-              {ProfileName}
+              {profileName}
             </Text>
           </View>
-
           <View style={styles.profileBody} />
         </ScrollView>
       </View>

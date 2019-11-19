@@ -4,6 +4,9 @@ import {
 
 
 const styles = StyleSheet.create({
+    mainView: {
+            flex: 1 
+    },
     mainContainer: {
             position: 'absolute',
             top: 0,

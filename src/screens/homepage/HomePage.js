@@ -12,7 +12,7 @@ import {
   GenerateProfileImageHeight,
   GenerateProfileImageMarginTop,
   GenerateHeaderZindex,
-  GenerateHeaderTitleBottom} from './AnimatedHomePage';
+  GenerateHeaderTitleBottom} from './ProfileImageTransition';
 
 import {styles} from './Style'
 import profileImage from "../../assets/me.jpg";
@@ -20,7 +20,6 @@ import profileImage from "../../assets/me.jpg";
 class Homepage extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       scrollY: new Animated.Value(0)
     };
@@ -77,7 +76,6 @@ class Homepage extends Component {
               {profileName}
             </Text>
           </View>
-
           <View style={styles.profileBody} />
         </ScrollView>
       </View>

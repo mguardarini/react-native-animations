@@ -5,14 +5,15 @@ import {
 
 const styles = StyleSheet.create({
     mainView: {
-            flex: 1 
+            flex: 1,
     },
-    mainContainer: {
+    backgroundImage: {
             position: 'absolute',
+            width:400,
+            height:750,
             top: 0,
             left: 0,
             right: 0,
-            backgroundColor: '#00acee',
             alignItems: 'center'
     },
     mainText: { 
@@ -20,10 +21,10 @@ const styles = StyleSheet.create({
             fontSize: 14,
             fontWeight: 'bold'
     },
-    profileImage: {
-            flex: 1,
-            width: null,
-            height: null
+    logoImage:{
+        width:300,
+        height:100,
+        marginTop:320
     },
     profileName: { 
             fontWeight: 'bold',

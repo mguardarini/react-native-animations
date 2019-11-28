@@ -16,23 +16,16 @@ const styles = StyleSheet.create({
             right: 0,
             alignItems: 'center'
     },
-    mainText: { 
-            color: 'white',
-            fontSize: 14,
-            fontWeight: 'bold'
-    },
     logoImage:{
         width:300,
         height:100,
         marginTop:320
     },
-    profileName: { 
-            fontWeight: 'bold',
-            fontSize: 26,
-            paddingLeft: 10
-    },
-    profileBody: { 
-            height: 1000 
+    fadeIn:{
+        marginRight: 50,    
+        width: 250,
+        height: 50,
+        backgroundColor: 'powderblue'
     }
 });
 

@@ -81,5 +81,6 @@ class Homepage extends Component {
     );
   }
 }
-export { Homepage };
+
+export default Homepage;
 

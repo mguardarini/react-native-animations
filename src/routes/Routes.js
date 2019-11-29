@@ -1,17 +1,21 @@
 import React from 'react'
 
 import SplashScreen from '../screens/splashscreen/Splashscreen';
-import HomePage from '../screens/homepage/HomePage';
-
+import HomeScreen from '../screens/homepage/HomePage';
+import {createStackNavigator} from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation';
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch';
 import { Transition } from 'react-native-reanimated';
 
+
+const SplashStack = createStackNavigator({ Splash: SplashScreen });
+const HomeStack = createStackNavigator({ Home: HomeScreen });
+
+
 const mainNavigation = createAnimatedSwitchNavigator(
   {
-    SplashScreen,
-    HomePage,
-    
+    Splash: SplashStack,
+    Home: HomeStack,
   },
   {
     transition: (

@@ -4,14 +4,6 @@ import Splashscreen from './src/screens/splashscreen/Splashscreen';
 import { AppRegistry } from "react-native";
 import Routes from "./src/routes/Routes";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <Routes/>
-    );
-  }
-}
-export default App;
+AppRegistry.registerComponent('SpongeBob', () => Routes);
+
+export default Routes;

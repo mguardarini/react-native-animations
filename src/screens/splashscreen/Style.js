@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     logoImage:{
         width:300,
         height:100,
-        marginTop:320
+        marginTop:220
     },
     fadeIn:{
         marginRight: 50,    

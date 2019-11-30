@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6d5014-a235-449e-8d44-685024830ba7" name="Default Changelist" comment="" />
+    <list default="true" id="2f6d5014-a235-449e-8d44-685024830ba7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,9 +14,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="60" />
-    <option name="y" value="10" />
-    <option name="width" value="1750" />
+    <option name="x" value="191" />
+    <option name="y" value="50" />
+    <option name="width" value="1619" />
     <option name="height" value="980" />
   </component>
   <component name="ProjectView">
@@ -22,6 +24,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
@@ -35,7 +38,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -69,10 +71,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="48" y="8" width="1400" height="784" extended-state="0" />
+    <frame x="153" y="40" width="1295" height="784" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33507463" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.36356276" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />

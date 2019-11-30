@@ -14,7 +14,7 @@ import {
   GenerateHeaderZindex,
   GenerateHeaderTitleBottom} from './ProfileImageTransition';
 
-import styles from './Style.js'
+import styles from './Style'
 import profileImage from "../../assets/me.jpg";
 
 class Homepage extends Component {
@@ -27,7 +27,7 @@ class Homepage extends Component {
 
   render() {
     const scrollY = this.state.scrollY;
-    const profileName = "Mr.Sponge";
+    const profileName = "Mr.Sponge"
     return (
       <View style={styles.mainView}>
         <Animated.View
@@ -81,6 +81,16 @@ class Homepage extends Component {
     );
   }
 }
-
+Homepage.navigationOptions = {
+  title: "Homepage",
+  headerStyle: {
+      backgroundColor: '#26B9C8',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }
+}
 export default Homepage;
 

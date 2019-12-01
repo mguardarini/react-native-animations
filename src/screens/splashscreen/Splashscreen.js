@@ -55,7 +55,7 @@ class Splashscreen extends Component
 Splashscreen.navigationOptions = {
   title: "Welcome to Spongebob world",
   headerStyle: {
-      backgroundColor: '#26B9C8',
+      backgroundColor: '#0457A0',
   },
   headerTintColor: '#fff',
   headerTitleStyle: {

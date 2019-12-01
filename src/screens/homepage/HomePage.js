@@ -22,6 +22,7 @@ import profileImage from "../../assets/me.jpg";
 const Homepage  = () => {
 
     const [scrollY,setScrollY] = useState(new Animated.Value(0));
+    
     const profileName = "Mr.Sponge"
     return (
       <View style={styles.mainView}>

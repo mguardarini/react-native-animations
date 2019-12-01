@@ -31,25 +31,20 @@ const FadeInView = (props) => {
     </Animated.View>
   );
 }
-class Splashscreen extends Component
+
+const Splashscreen = (props) =>
 {
-  constructor(props)
-  {
-    super(props);
-  }
-  render(){
-      return (
-            <View style={styles.mainView}>       
-                <View>
-                    <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                        <FadeInView navigation={this.props.navigation} style={styles.fadeIn} navigation={this.props.navigation}>
-                                <Image source={logoImage} style={styles.logoImage}/>
-                        </FadeInView>
-                    </ImageBackground >  
-                </View>        
-            </View>  
-        )
-  }
+  return (
+        <View style={styles.mainView}>       
+            <View>
+                <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+                    <FadeInView navigation={this.props.navigation} style={styles.fadeIn} navigation={this.props.navigation}>
+                            <Image source={logoImage} style={styles.logoImage}/>
+                    </FadeInView>
+                </ImageBackground >  
+            </View>        
+        </View>  
+    )
 }
 
 Splashscreen.navigationOptions = {

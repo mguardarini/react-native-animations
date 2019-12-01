@@ -17,7 +17,7 @@ const FadeInView = (props) => {
     ).start();
     setInterval(() => {
         props.navigation.navigate('Home');
-    }, 4000);
+    }, 2000);
   }, [])
  
   return (
@@ -31,7 +31,7 @@ const FadeInView = (props) => {
     </Animated.View>
   );
 }
-export default class Splashscreen extends Component
+class Splashscreen extends Component
 {
   constructor(props)
   {
@@ -51,3 +51,17 @@ export default class Splashscreen extends Component
         )
   }
 }
+
+Splashscreen.navigationOptions = {
+  title: "Welcome to Spongebob world",
+  headerStyle: {
+      backgroundColor: '#0457A0',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    textAlign: 'center'
+  }
+}
+
+export default Splashscreen;

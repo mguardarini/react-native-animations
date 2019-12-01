@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import {
   View,
   Text,
@@ -6,6 +6,8 @@ import {
   Image,
   Animated
 } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Body, Icon } from 'native-base';
+import Notices from './notices/NoticesFragment';
 
 import {
   GenerateHeaderHeight,
@@ -14,20 +16,13 @@ import {
   GenerateHeaderZindex,
   GenerateHeaderTitleBottom} from './ProfileImageTransition';
 
-import styles from './Style.js'
+import styles from './Style'
 import profileImage from "../../assets/me.jpg";
 
-class Homepage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      scrollY: new Animated.Value(0)
-    };
-  }
+const Homepage  = () => {
 
-  render() {
-    const scrollY = this.state.scrollY;
-    const profileName = "Mr.Sponge";
+    const [scrollY,setScrollY] = useState(new Animated.Value(0));
+    const profileName = "Mr.Sponge"
     return (
       <View style={styles.mainView}>
         <Animated.View
@@ -75,12 +70,30 @@ class Homepage extends Component {
               {profileName}
             </Text>
           </View>
-          <View style={styles.profileBody} />
+          <View style={styles.profileBody}>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+          </View>
         </ScrollView>
       </View>
     );
+  
+}
+Homepage.navigationOptions = {
+  title: "Homepage",
+  headerLeft: <Icon name="menu" style={{marginLeft:12, color:'white'}} size={40} />,
+  headerStyle: {
+      backgroundColor: '#0457A0',
+  },
+  headerTintColor: '#fff',
+  headerTitleStyle: {
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 }
-
 export default Homepage;
 

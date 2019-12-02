@@ -25,7 +25,7 @@ const Homepage  = () => {
 
     const [scrollY,setScrollY] = useState(new Animated.Value(0));
     
-    const profileName = "Mr.Sponge"
+    const profileName = "Mr.Sponge - Jokes"
     return (
       <View style={styles.mainView}>
         <Animated.View

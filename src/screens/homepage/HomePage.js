@@ -6,7 +6,9 @@ import {
   Image,
   Animated
 } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Body, Icon } from 'native-base';
+
+import { Icon } from 'native-base';
+
 import Notices from './notices/NoticesFragment';
 
 import {

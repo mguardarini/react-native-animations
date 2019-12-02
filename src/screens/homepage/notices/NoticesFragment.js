@@ -1,7 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import profileImage from "../../../assets/me.jpg";
+import {
+  Image
+} from 'react-native';
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
+import { View } from 'react-native';
+import styles from './Style'
 
 const Notices = (props) => {
 
@@ -14,9 +19,13 @@ const Notices = (props) => {
             </CardItem>
             <CardItem button onPress={() => alert("This is Card Body")}>
               <Body>
-                <Text>
-                  {props.body}
-                </Text>
+                <View style={{width:100,height:100}}>
+                  <Image
+                    source={profileImage}
+                    style={styles.profileImage}
+                  />
+                    <Text>{props.title}</Text>
+                  </View>
               </Body>
             </CardItem>
             <CardItem footer button onPress={() => alert("This is Card Footer")}>

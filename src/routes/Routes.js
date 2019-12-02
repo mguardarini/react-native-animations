@@ -14,7 +14,7 @@ const HomeStack = createStackNavigator({ Home: HomeScreen });
 
 const mainNavigation = createAnimatedSwitchNavigator(
   {
-    Splash: SplashStack,
+    // Splash: SplashStack,
     Home: HomeStack,
   },
   {

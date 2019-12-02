@@ -74,7 +74,14 @@ const Homepage  = () => {
             </Text>
           </View>
           <View style={styles.profileBody}>
-              <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
+              <Notices title="Claustrophobic means “afraid of Santa Claus”." 
+                       body="Squidward: “You’re making me claustrophobic.”                         
+                              Patrick: “What does claustrophobic mean?”
+                              SpongeBob: “It means he’s afraid of Santa Claus.”
+                              Patrick: “HO, HO, HO!”
+                              SpongeBob: “Stop it, Patrick! You’re scaring him!."
+                       footer="call for 199"
+              />
               <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
               <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>
               <Notices title="spongebob are missing" body="for any information please contact us." footer="call for 199"/>

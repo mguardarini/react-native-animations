@@ -4,9 +4,13 @@ import {View,Text,Image,ImageBackground,Animated } from 'react-native';
 import styles from './Style.js'
 import logoImage from "../../assets/logo.png";
 import backgroundImage from "../../assets/splash2.jpeg";
+import { useNavigation } from 'react-navigation-hooks'
+
 
 const FadeInView = (props) => {
   const [fadeAnim] = useState(new Animated.Value(0)) 
+  const { navigate } = useNavigation();
+
   useEffect(() => {
     Animated.timing(
       fadeAnim,
@@ -16,7 +20,7 @@ const FadeInView = (props) => {
       }
     ).start();
     setInterval(() => {
-        props.navigation.navigate('Home');
+        navigate('Home');
     }, 2000);
   }, [])
  
@@ -32,24 +36,18 @@ const FadeInView = (props) => {
   );
 }
 
-class Splashscreen extends Component
-{
-  constructor(props){
-    super(props)
-  }
-  render(){
+const Splashscreen = (props) => {
     return (
           <View style={styles.mainView}>       
               <View>
                   <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
-                      <FadeInView navigation={this.props.navigation} style={styles.fadeIn} navigation={this.props.navigation}>
+                      <FadeInView style={styles.fadeIn}>
                               <Image source={logoImage} style={styles.logoImage}/>
                       </FadeInView>
                   </ImageBackground >  
               </View>        
           </View>  
-      )
-  }
+    )
 }
 
 Splashscreen.navigationOptions = {
